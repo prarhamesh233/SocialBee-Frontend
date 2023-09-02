@@ -1,0 +1,11 @@
+.content{
+    /* margin-left: 18rem; */
+    position:relative;
+    margin-left: 19%;
+    height: 50rem;
+    width: 56%;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
