@@ -1,5 +1,5 @@
 .results-list{
-    width:42%;
+    width:39.5%;
     margin-left: 20%;
     margin-top: 1rem;
     background-color: white;
@@ -9,6 +9,7 @@
     border-radius:5px;
     max-height: 100%;
 }
+
 @media screen and (max-width: 883px) {
     /* Add responsive styles here */
     .results-list {

@@ -1,9 +1,10 @@
-.result-item{
+.results-list{
     padding:10px 20px;
 
 
 }
 
-.result-item:hover{
+.results-list:hover{
+    cursor: pointer;
     background-color: #efefef;
 }
