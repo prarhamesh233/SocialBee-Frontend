@@ -39,6 +39,7 @@ input:focus{
     .input-wrapper {
         width: 30%; /* Adjust width for smaller screens */
        display: flex; /* Set a maximum width if needed */
-        margin-left: 23%; /* Adjust margin for centering */
+        margin-left: 23%; 
+        /* Adjust margin for centering */
     }
 }
