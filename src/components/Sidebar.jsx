@@ -7,8 +7,8 @@ function SideBar() {
   
 
   return (
-    <div className="sidebar">
-      <nav>
+    <div >
+      <nav className="sidebar">
         <h5>BHAITYA</h5>
         <Link to="/">
           <span className="material-icons">home</span>Home

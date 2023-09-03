@@ -5,6 +5,7 @@ import SearchResult from './SearchResult'
 function SearchResultsList({ results }) {
     return (
       <div className='results-list'>
+        
         {results.map((result) => (
           <SearchResult key={result.id} user={result} />
         ))}
