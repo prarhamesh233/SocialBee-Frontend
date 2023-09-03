@@ -1,14 +1,14 @@
 .sidebar{
+  display: table;
     padding-top: 0;
     width: 15%;
     background-color: #f1f1f1;
-    
     padding: 20px;
-  margin:0;
-  height: 100vh; 
-  position: fixed; 
-  top: 0; 
-  left: 0;  
+    margin:0;
+    height: 100vh; 
+    position: fixed; 
+    top: 0; 
+    left: 0;  
 }
 
 .sidebar a {
@@ -23,6 +23,8 @@
     padding-bottom: 5px;
     padding-left: 20px;
     display: flex;
+    
+    
   }
 .sidebar a:hover{
     background-color: #35323a;
