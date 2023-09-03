@@ -1,10 +1,10 @@
-.results-list{
+.search-result{
     padding:10px 20px;
 
 
 }
 
-.results-list:hover{
+.search-result:hover{
     cursor: pointer;
     background-color: #efefef;
 }
