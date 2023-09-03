@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
-import SearchBarModal from "./SearchBarModal"; // Import the SearchBarModal component
+
 import '../css/Sidebar.css'
 
 function SideBar() {
-  const [isSearchModalOpen, setSearchModalOpen] = useState(false);
-  console.log("isSearchModalOpen:", isSearchModalOpen);
+  
+
   return (
     <div className="sidebar">
       <nav>
@@ -20,7 +20,7 @@ function SideBar() {
           <span className="material-icons">explore</span>Explore
         </Link>
      
-        <Link to="/SearchBarModal" onClick={() => setSearchModalOpen(true)}>
+        <Link to="/Search">
           <span className="material-icons">search</span>Search
         </Link>
         <Link to="">
@@ -28,11 +28,8 @@ function SideBar() {
         </Link>
       </nav>
   
-      {isSearchModalOpen && (
-        <SearchBarModal
-          onClose={() => setSearchModalOpen(false)} // Pass a callback to close the modal
-        />
-      )}
+      
+      
     </div>
   );
 }

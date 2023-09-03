@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import UserProfileCard from './UserProfileCard';
-
+import axios from 'axios';
 import '../css/UserProfileCard.css';
 
-const staticUserProfiles = [
-  {
-    id: 1,
-    username: 'user1',
-    bio: 'This is the bio for user 1.',
-  },
-  // Add more user profiles here
-];
-
 function Profile() {
+  const [userProfiles, setUserProfiles] = useState([]);
+
+  const fetchUserProfiles = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/users');
+      if (response.status === 200) {
+        setUserProfiles(response.data);
+      } else {
+        throw new Error('Failed to fetch user profiles');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUserProfiles();
+  }, []);
+
   return (
-    <div className='profile-card-container'> {/* Updated container class */}
-      {staticUserProfiles.map((userProfile) => (
-        <div  key={userProfile.id}> {/* Updated user profile card class */}
-          <UserProfileCard userProfile={userProfile} />
-        </div>
+    <div className='profile-card-container'>
+      {userProfiles.map((userProfile) => (
+        <UserProfileCard key={userProfile._id} userProfile={userProfile} />
       ))}
     </div>
   );

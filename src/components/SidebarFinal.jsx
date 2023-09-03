@@ -5,9 +5,11 @@ import Profile from "./Profile";
 import Explore from "./Explore";
 
 import SideBar from "./Sidebar";
-import SearchBarModal from "./SearchBarModal";
+
+import Search from "./Search";
 
 function SidebarFinal(){
+  
     return (
         <div>
          <SideBar />
@@ -16,7 +18,7 @@ function SidebarFinal(){
         <Route exact path="/" element={<Home></Home>} />
         <Route exact path="/profile" element={<Profile></Profile>} />
         <Route exact path="/explore" element={<Explore></Explore>} />
-        <Route path="/search" element={<SearchBarModal></SearchBarModal>} />
+        <Route path="/search" element={<Search></Search>} />
         </Routes>
         </div>
     )

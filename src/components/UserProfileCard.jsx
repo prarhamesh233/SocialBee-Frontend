@@ -2,14 +2,15 @@
 import React from 'react';
 import '../css/UserProfileCard.css'
 
+
+
 function UserProfileCard({ userProfile }) {
+  const { firstName, lastName } = userProfile;
+
   return (
     <div className='user-profile-card'>
-      <div>
-        <h2>{userProfile.username}</h2>
-        <p>{userProfile.bio}</p>
-        {/* Add more profile details here */}
-      </div>
+      <h6>{`${firstName} ${lastName}`}</h6>
+      {/* You can add more fields here if needed */}
     </div>
   );
 }

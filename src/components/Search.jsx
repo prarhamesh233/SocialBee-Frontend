@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from 'react'
+import SearchBar from './SearchBar'
+import SearchResultsList from './SearchResultsList';
 
-function Search(){
-    return (
-        <div className="search">
-           <input type="text" placeholder="Find user" spellCheck="false" className="search-bar"/>
-           <button type="submit" className="button">Search</button>
-           
-        </div>
-    );
+function Search() {
+    const[results,setResults]=useState([]);
+  return (
+    <div className='main-container'>
+    <div className='searchBar-container'>
+        <SearchBar setResults={setResults}></SearchBar>
+        <SearchResultsList results={results}></SearchResultsList>
+      
+    </div>
+    </div>
+  )
 }
-export default Search;
+
+export default Search
