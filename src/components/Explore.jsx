@@ -6,7 +6,7 @@ function Explore(){
         <div>
             <Search/>
         <div className="content">
-            1
+            
          </div>
          </div>
             );

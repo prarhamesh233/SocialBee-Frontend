@@ -9,7 +9,7 @@ function SideBar() {
   return (
     <div >
       <nav className="sidebar">
-        <h5>BHAITYA</h5>
+        <h5>SocialBee</h5>
         <Link to="/">
           <span className="material-icons">home</span>Home
         </Link>
@@ -23,8 +23,11 @@ function SideBar() {
         <Link to="/Search">
           <span className="material-icons">search</span>Search
         </Link>
-        <Link to="">
-          <span className="material-icons">logout</span>Logout
+        <Link to="/login">
+        <span className="material-icons">login</span>Login
+        </Link>
+        <Link  to='/register'>
+        <span class="material-icons">how_to_reg</span>Signup
         </Link>
       </nav>
   
