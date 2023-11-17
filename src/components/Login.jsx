@@ -20,6 +20,8 @@ const navigate = useNavigate();
       // Send a POST request to your backend to verify the login
       const response = await fetch('http://localhost:3001/auth/login', {
         method: 'POST',
+        credentials: 'include',
+
         headers: {
           'Content-Type': 'application/json',
         },

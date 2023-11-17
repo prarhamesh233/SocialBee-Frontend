@@ -1,34 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import UserProfileCard from './UserProfileCard';
-import axios from 'axios';
+
+
+
 import '../css/UserProfileCard.css';
 
-function Profile() {
-  const [userProfiles, setUserProfiles] = useState([]);
-
-  const fetchUserProfiles = async () => {
-    try {
-      const response = await axios.get('http://localhost:3001/users');
-      if (response.status === 200) {
-        setUserProfiles(response.data);
-      } else {
-        throw new Error('Failed to fetch user profiles');
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchUserProfiles();
-  }, []);
-
+const Profile=()=> {
+  
   return (
-    <div className='profile-card-container'>
-      {userProfiles.map((userProfile) => (
-        <UserProfileCard key={userProfile._id} userProfile={userProfile} />
-      ))}
+  <div>
+    <div style={{display:"flex",
+     justifyContent:"space-evenly",
+     margin:"18px 0px"
+     }}>
+    <div>
+      <img  style={{width:'160px',height:'160px',borderRadius:'80px'}} src="https://c4.wallpaperflare.com/wallpaper/692/93/295/women-actress-brunette-long-hair-wallpaper-preview.jpg" alt="" />
     </div>
+    <div>
+      <h1>Emma Watson</h1>
+      <div  style={{display:'flex', justifyContent:"space-between"}}>
+        <h6>40post</h6>
+        <h5>follower</h5>
+        <h5>following</h5>
+      </div>
+    </div>
+    </div>
+  </div>
   );
 }
 

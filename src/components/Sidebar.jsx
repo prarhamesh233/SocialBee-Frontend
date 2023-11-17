@@ -16,8 +16,8 @@ function SideBar() {
         <Link to="/profile">
           <span className="material-icons">account_circle</span>Profile
         </Link>
-        <Link to="/explore">
-          <span className="material-icons">explore</span>Explore
+        <Link to="/create">
+        <span class="material-icons">edit</span>Create
         </Link>
      
         <Link to="/Search">
@@ -27,7 +27,7 @@ function SideBar() {
         <span className="material-icons">login</span>Login
         </Link>
         <Link  to='/register'>
-        <span class="material-icons">how_to_reg</span>Signup
+        <span className="material-icons">how_to_reg</span>Signup
         </Link>
       </nav>
   

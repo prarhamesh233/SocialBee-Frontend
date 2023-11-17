@@ -26,9 +26,9 @@
     margin-bottom: 20px;
   }
   
-  input[type="email"],
-  input[type="password"],
-  input[type='text'] {
+ input[type="email"],
+   input[type="password"],
+   input[type='text'] {
     
     width: 90%;
     padding: 7px 8px;

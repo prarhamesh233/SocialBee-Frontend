@@ -14,16 +14,20 @@ const Register = () => {
 
        const userData={
         userName,
-        email
+        email,
+        password
        
        };
        try{
         const response= await fetch('http://localhost:3001/auth/register',{
           method:'post',
+          credentials: 'include',
+
           headers:{
             'content-Type':'application/json'
           },
           body: JSON.stringify(userData),
+          
         });
         if(response.ok){
           navigate('/');

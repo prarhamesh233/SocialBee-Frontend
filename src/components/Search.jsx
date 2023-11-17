@@ -1,49 +1,52 @@
-import React, { useState } from 'react'
-import SearchBar from './SearchBar'
+import React, { useState, useEffect } from 'react';
+import SearchBar from './SearchBar';
 import SearchResultsList from './SearchResultsList';
+import axios from 'axios';
 
 function Search() {
   const [results, setResults] = useState([]);
   const [selectedResult, setSelectedResult] = useState(null);
-  
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (!loading) {
+      return;
+    }
+
+    const fetchData = async (value) => {
+      try {
+        const response = await axios.get(`http://localhost:3001/users/search?query=${value}`);
+        setResults(response.data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    if (loading) {
+      fetchData(selectedResult);
+    }
+  }, [loading, selectedResult]);
 
   const handleResultClick = (result) => {
     setSelectedResult(result);
+    setLoading(true); // Start fetching data when a result is clicked
   };
-    
-    const fetchData = (value) => {
-      fetch('http://localhost:3001/users')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Failed to fetch user profiles');
-          }
-          return response.json(); // Parse the JSON data
-        })
-        .then((json) => {
-          console.log(json)
-          // Handle the parsed JSON data here
-       const results=json.filter((user)=>{
-          return (
-              value
-           && user && user.firstName
-           && user.firstName.toLowerCase().includes(value));
-       });
-       setResults(results);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
+
   return (
     <div className='main-container'>
-    <div className='searchBar-container'>
-    <SearchBar selectedResult={selectedResult} onSearch={fetchData} />
-        <SearchResultsList results={results} onResultClick={handleResultClick} />
-
-      
+      <div className='searchBar-container'>
+        <SearchBar selectedResult={selectedResult} onSearch={setSelectedResult} />
+        {loading && <div>Loading...</div>}
+        {error && <div>Error: {error}</div>}
+        {!loading && !error && (
+          <SearchResultsList results={results} onResultClick={handleResultClick} />
+        )}
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default Search
+export default Search;

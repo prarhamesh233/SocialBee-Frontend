@@ -10,7 +10,7 @@ function SearchBar({selectedResult,onSearch}) {
     useEffect(() => {
       console.log('selectedResult:', selectedResult);
       if (selectedResult) {
-        setInput(selectedResult.firstName);
+        setInput(selectedResult.userName);
         
       } else {
         setInput('');

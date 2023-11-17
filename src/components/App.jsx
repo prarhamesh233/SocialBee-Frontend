@@ -3,9 +3,6 @@ import SidebarFinal from "./SidebarFinal";
 
 
 
-// import Search from "./Search";
-
-
 function App(){
   
     return(
